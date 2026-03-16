@@ -1393,7 +1393,6 @@ function startApp(){
   buildNav(isAdm, isBs);
   // showPage aufrufen - das initialisiert _pageMap
   showPage(isAdm ? 'adm-home' : isBs ? 'bs-home' : 'fil-home');
-  // Nochmal rendern nach Firebase-Sync (mehrfach)
   [1500, 3000, 5000].forEach(function(delay) {
     setTimeout(function() {
       if (!window.user) return;
