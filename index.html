@@ -1199,7 +1199,7 @@ const VERBRAUCH = {
   'Kaffee & Tee':['Crema','Espresso','Koffeinfreier Kaffee','Apfeltee','Beerenzauber','Earl Grey','Darjeeling','Ingwer','Jasmintee','Pfefferminz','Rotbusch','Kamille','Kaba'],
   'Reinigung':   ['Handschuhe','Kleine Müllsäcke','GroÃe Müllsäcke','Schwammtücher','Prittschwamm','Prittschwamm groÃ','Klopapier','Papierhandtücher','Putzlappen','Geschirrtücher','Microfasertücher','Schrubber','Fensterleder','Handfeger-Set','Wischmopp groÃ'],
   'Putzmittel':  ['Spülmittel','Klarspüler','Allzweck Reiniger','Handseife','WC-Reiniger','Milchschaumreiniger','Fettlöser','Maschinenspülmittel','Reinigungstabletten'],
-  'Sonstiges':   ['Nutella PortionsgröÃen','SüÃstoff','Salz','Strohhalme','Kontrollpläne WC','Putzpläne','Temperaturkontrollpläne','Gutscheine','Kaffeepässe'],
+  'Sonstiges':   ['Nutella Portionsgrößen','Süßstoff','Salz','Strohhalme','Kontrollpläne WC','Putzpläne','Temperaturkontrollpläne','Gutscheine','Kaffeepässe'],
 };
 
 // Backstube-Artikel je Bestelltyp
@@ -1216,7 +1216,7 @@ const BS_ARTIKEL = {
   spontan: {
     'Backwaren':    ['Croissant','Brezel','Laugenstange','Rosinenbrötchen','Mohnbrötchen','Baguette','Vollkornbrot','WeiÃbrot'],
     'Aufschnitt':   ['Bierschinken','Salami','Leberkäse','Fleischkäse'],
-    'SüÃes':        ['Donut','Berliner','Mohnschnecke','Nussschnecke','Croissant gefüllt'],
+    'Süßes':        ['Donut','Berliner','Mohnschnecke','Nussschnecke','Croissant gefüllt'],
   },
 };
 
@@ -3518,7 +3518,7 @@ function openMailClientBaeko() {
     });
     body += '\n';
   });
-  body += 'Mit freundlichen GrüÃen\nBäckerei Bock\n\n(PDFs der einzelnen Filialen sind als Anhang beigefügt)';
+  body += 'Mit freundlichen Grüßen\nBäckerei Bock\n\n(PDFs der einzelnen Filialen sind als Anhang beigefügt)';
 
   const to  = encodeURIComponent(BAEKO_MAIL_TO);
   window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + encodeURIComponent(body);
@@ -3537,8 +3537,8 @@ function buildBaekoMail(submitted, woche) {
     display += block;
   });
 
-  plain   += `Mit freundlichen GrüÃen\nBäckerei Bock`;
-  display += `Mit freundlichen GrüÃen\nBäckerei Bock`;
+  plain   += `Mit freundlichen Grüßen\nBäckerei Bock`;
+  display += `Mit freundlichen Grüßen\nBäckerei Bock`;
   return { plain, display };
 }
 
@@ -3689,7 +3689,7 @@ const INVENTUR_VORLAGE = [
     { name:'Kaba Nachfüller',             einheit:'St.',  verpEinh:'' },
     { name:'Nutella 400g',                einheit:'Gl.',  verpEinh:'' },
     { name:'Nutella Portion',             einheit:'St.',  verpEinh:'' },
-    { name:'SüÃstoff',                    einheit:'St.',  verpEinh:'' },
+    { name:'Süßstoff',                    einheit:'St.',  verpEinh:'' },
   ]},
 ];
 
@@ -4348,7 +4348,7 @@ function buildBaekoSettings() {
         BÃKO-Liste je Filiale
         <span class="saved-flash" id="baeko-saved">OK Gespeichert</span>
       </div>
-      <p style="font-size:13px;color:var(--g500);margin-bottom:16px">Jede Filiale kann eine eigene BÃKO-Artikelliste haben. StandardmäÃig gilt die gemeinsame Liste.</p>
+      <p style="font-size:13px;color:var(--g500);margin-bottom:16px">Jede Filiale kann eine eigene BÃKO-Artikelliste haben. Standardmäßig gilt die gemeinsame Liste.</p>
       <div class="settings-tab-row">${filTabs}</div>
       <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
         ${window._baekoPerFil[editBaekoFil]
