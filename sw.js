@@ -1,5 +1,5 @@
-const CACHE = 'bock-v1773689498';
-const URLS = ['/'];
+// Service Worker Bock Bestellsystem
+const CACHE_VERSION = 'bock-v1773775064956';
 
 self.addEventListener('install', e => {
   self.skipWaiting();
@@ -7,13 +7,13 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
-      .then(() => self.clients.claim())
+    caches.keys().then(keys =>
+      Promise.all(keys.map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', e => {
-  if (e.request.method !== 'GET') return;
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  // Kein Caching - immer frisch laden
+  e.respondWith(fetch(e.request));
 });
